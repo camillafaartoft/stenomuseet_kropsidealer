@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Video om kropsidealer</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+    <h2 id="motiongraphic_overskrift">Se, hvad andre kæmper med...</h2>
+
+    <video class="motiongraphic">
+        <source src="img/motiongraphic.mp4" type="video/mp4">
+    </video>
+
+    <a class="tilbage_info_knap_motion" href="infomarie.html">Tilbage</a>
+    <a class="fortsaet_info_knap_motion" href="afslutning.html">Videre</a>
+
+    <script>
+        // Vælg videoelementet og fortsæt + tilbage knapperne
+        const video = document.querySelector('.motiongraphic');
+        const tilbage_info_knap_motion = document.querySelector('.tilbage_info_knap_motion');
+        const fortsaet_info_knap_motion = document.querySelector('.fortsaet_info_knap_motion');
+        const motiongraphic_overskrift = document.querySelector('#motiongraphic_overskrift');
+
+        video.addEventListener('ended', function() {
+        // Vent i 2 sekunder før den går videre til afslutningssiden
+        setTimeout(function() {
+        // Naviger til afslutningssiden
+        window.location.href = 'afslutning.html';
+        }, 2000); 
+        });
+  
+        setTimeout(function() {
+        // Start videoen
+        video.play();
+        // Gør videoen synlig ved at ændre opacity til 1
+        video.style.opacity = 1; 
+        // efter 3 sekunder
+        }, 3000);
+        
+        // Vis tilbage knappen efter 3 sekunder
+        setTimeout(function() {
+            tilbage_info_knap_motion.style.opacity = '1';
+        }, 3000);
+
+        // Vis fortsæt knappen efter 3 sekunder
+        setTimeout(function() {
+            fortsaet_info_knap_motion.style.opacity = '1';
+        }, 3000);
+
+        // Fjern overskriften efter 2,5 sekunder
+        setTimeout(function() {
+            motiongraphic_overskrift.style.opacity = '0';
+        }, 2500);
+    </script>
+ 
+</body>
+</html>

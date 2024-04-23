@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Quiz 1960</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+    <a class="tilbage_knap" href="fakta1900.html">Tilbage</a>
+
+    <div>
+        <h2 class="overskrift_quiz1900">Hvilket kropsideal skulle Marie efterleve i 1960?</h2>  
+    </div>
+
+    <div class="quiz_img">
+        <div class="quiz_img_række1">
+            <div id="fedt_1960">
+                <img src="img/quizovervaegtig.jpg" alt="">
+                <h3>Fedt på kroppen</h3>
+            </div>
+
+            <div id="timeglas_1960">
+                <img src="img/quiztimeglas.jpg" alt="">
+                <h3>Timeglas-figur</h3>
+            </div>
+        </div>
+
+        <div class="quiz_img_række2">
+            <div id="muskulos_1960">
+                <img src="img/quiztraenet.jpg" alt="">
+                <h3>Muskuløs</h3>
+            </div>
+
+            <div id="slank_1960">
+                <img src="img/quizingenformer.jpg" alt="">
+                <h3>Ingen former</h3>
+            </div>
+        </div>
+    </div>    
+
+
+    <img class="tidslinje" src="img/tidslinje1960.png" alt="Tidslinje 1960">
+    
+    <img id="popup_korrekt1960" src="img/korrektsvar.jpg" alt="rigtigt svar popup">
+
+    <img id="popup_forkert1960" src="img/forkertsvar.jpg" alt="forkert svar popup">
+
+    <audio id="forkertLyd" src="img/forkertLyd.mp3"></audio>
+
+    <audio id="korrektLyd" src="img/korrektLyd.mp3"></audio>
+    
+    <script>
+        // Henter html elementerne med de angivne id'er (erklærer mine variable)
+        const korrekt1960 = document.getElementById("popup_korrekt1960");
+        const forkert1960 = document.getElementById("popup_forkert1960");
+
+        const fed1960 = document.getElementById("fedt_1960");
+        const timeglas1960 = document.getElementById("timeglas_1960");
+        const muskulos1960 = document.getElementById("muskulos_1960");
+        const slank1960 = document.getElementById("slank_1960");
+
+        // Angiver hvilke funktioner der skal kaldes ved klik på forskellige elementer
+        timeglas1960.onclick = visForkertPopup1960;
+        fed1960.onclick = visForkertPopup1960;
+        muskulos1960.onclick = visForkertPopup1960;
+        slank1960.onclick = visKorrektPopup1960;
+
+        // Funktion til at vise den korrekte popup og omdirigere til næste side efter 2,5 sekundt
+        function visKorrektPopup1960() {
+            korrekt1960.style.display = "block"; // Viser korrekt popup
+            forkert1960.style.display = "none"; // Skjuler forkert popup
+
+            // Afspil lyden for korrekt svar
+            korrektLyd.play();
+
+            // Efter 2,5 sekundt, skjul korrekt popup og gå til næste side
+            setTimeout(function() {
+                korrekt1960.style.display = "none"; // Skjuler korrekt popup igen
+                window.location.href = "fakta1960.html"; // Springer til nyt html (fakta1900.html), fået fra ChatGPT
+            }, 2500);
+        }
+
+        // Funktion til at vise den forkerte popup og skjule den igen efter 1,5 sekundt
+        function visForkertPopup1960() {
+            forkert1960.style.display = "block"; // Viser forkert popup
+            korrekt1960.style.display = "none"; // Skjuler korrekt popup
+            
+            // Afspil lyden for forkert svar
+            forkertLyd.play();
+
+            // Efter 1,5 sekundt, skjul forkert popup
+            setTimeout(function() {
+                forkert1960.style.display = "none";
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
+
+    
+    
+

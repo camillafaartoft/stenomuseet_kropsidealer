@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Quiz 1900</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+    <a class="tilbage_knap" href="index.html">Tilbage</a>
+
+    <div>
+        <h2 class="overskrift_quiz1900">Hvilket kropsideal skulle Marie efterleve i 1900?</h2>  
+    </div>
+
+    <div class="quiz_img">
+        <div class="quiz_img_række1">
+            <div id="fedt_1900">
+                <img src="img/quizovervaegtig.jpg" alt="">
+                <h3>Fedt på kroppen</h3>
+            </div>
+
+            <div id="timeglas_1900">
+                <img src="img/quiztimeglas.jpg" alt="">
+                <h3>Timeglas-figur</h3>
+            </div>
+        </div>
+
+        <div class="quiz_img_række2">
+            <div id="muskulos_1900">
+                <img src="img/quiztraenet.jpg" alt="">
+                <h3>Muskuløs</h3>
+            </div>
+
+            <div id="slank_1900">
+                <img src="img/quizingenformer.jpg" alt="">
+                <h3>Ingen former</h3>
+            </div>
+        </div>
+    </div>    
+
+    <img class="tidslinje" src="img/tidslinje1900.png" alt="Tidslinje 1900">
+    
+    <img id="popup_korrekt1900" src="img/korrektsvar.jpg" alt="rigtigt svar popup">
+
+    <img id="popup_forkert1900" src="img/forkertsvar.jpg" alt="forkert svar popup">
+    
+    <audio id="forkertLyd" src="img/forkertLyd.mp3"></audio>
+
+    <audio id="korrektLyd" src="img/korrektLyd.mp3"></audio>
+
+    <script>
+        // Henter html elementerne med de angivne id'er (erklærer mine variable)
+        const korrekt1900 = document.getElementById("popup_korrekt1900");
+        const forkert1900 = document.getElementById("popup_forkert1900");
+
+        const fed1900 = document.getElementById("fedt_1900");
+        const timeglas1900 = document.getElementById("timeglas_1900");
+        const muskulos1900 = document.getElementById("muskulos_1900");
+        const slank1900 = document.getElementById("slank_1900");
+
+        // Angiver hvilke funktioner der skal kaldes ved klik på forskellige elementer
+        timeglas1900.onclick = visKorrektPopup1900;
+        fed1900.onclick = visForkertPopup1900;
+        muskulos1900.onclick = visForkertPopup1900;
+        slank1900.onclick = visForkertPopup1900;
+
+        // Funktion til at vise den korrekte popup og omdirigere til næste side efter 2,5 sekundt
+        function visKorrektPopup1900() {
+            korrekt1900.style.display = "block"; // Viser korrekt popup
+            forkert1900.style.display = "none"; // Skjuler forkert popup
+
+            // Afspil lyden for korrekt svar
+            korrektLyd.play();
+
+            // Efter 2,5 sekundt, skjul korrekt popup og gå til næste side
+            setTimeout(function() {
+                korrekt1900.style.display = "none"; // Skjuler korrekt popup igen
+                window.location.href = "fakta1900.html"; // Springer til nyt html (fakta1900.html), fået fra ChatGPT
+            }, 2500);
+        }
+
+        // Funktion til at vise den forkerte popup og skjule den igen efter 1,5 sekundt
+        function visForkertPopup1900() {
+            forkert1900.style.display = "block"; // Viser forkert popup
+            korrekt1900.style.display = "none"; // Skjuler korrekt popup
+        
+            // Afspil lyden for forkert svar
+            forkertLyd.play();
+
+            // Efter 1,5 sekundt, skjul forkert popup
+            setTimeout(function() {
+                forkert1900.style.display = "none";
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
+
+
+    
+

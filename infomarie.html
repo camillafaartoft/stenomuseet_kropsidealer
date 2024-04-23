@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Marie usikkerheder</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+    <h2 class="overskrift_quiz1900">Klik på cirklerne for at se, hvad Marie kæmper med</h2>
+    
+    <img class="marie_info" src="img/marie_info.png" alt="Marie i undertøj">
+
+    <div class="usikkerheder">
+        <div id="bryst_info"> 
+            <p class="bryst">Mine bryster kunne godt være større</p>
+            <img class="streg_bryst" src="img/streg1.png" alt="streg til brystet">
+        </div>
+        <div id="cirkel_bryst"></div>
+
+        <div id="skulder_info">
+            <p class="skulder">Mine skuldre er for store</p>
+            <img class="streg_skulder" src="img/streg2.png" alt="streg til skulderen">
+        </div>
+        <div id="cirkel_skulder"></div>
+
+        <div id="hofte_info">
+            <p class="hofte">Mine hofter er for brede</p>
+            <img class="streg_hofte" src="img/streg3.png" alt="streg til hoften">
+        </div>
+        <div id="cirkel_hofte"></div>
+
+        <div id="straek_info">
+            <p class="straek">Jeg har strækmærker</p>
+            <img class="streg_straek" src="img/streg4.png" alt="streg til maven">
+        </div>
+        <div id="cirkel_straek"></div>
+        
+        <div id="fod_info">
+            <p class="fod">Jeg synes, at jeg har for tykke fødder</p>
+            <img class="streg_fod" src="img/streg5.png" alt="streg til foden">
+        </div>
+        <div id="cirkel_fod"></div>
+
+        <div id="knae_info">
+            <p class="knae">Jeg har for meget fedt omkring mine knæ</p>
+            <img class="streg_knae" src="img/streg6.png" alt="streg til knaet">
+        </div>
+        <div id="cirkel_knae"></div>
+
+    </div>
+
+    <audio id="klik_lyd" src="img/happy_pop.mp3"></audio>
+
+    <a class="tilbage_info_knap" href="infotidslinje.html">Tilbage</a>
+    <a class="fortsæt_info_knap" href="motiongraphic.html">Videre</a>
+
+    <script>
+        const klikLyd = document.getElementById("klik_lyd");
+
+        // BRYSTET //
+        // event handler:
+        document.getElementById("cirkel_bryst").onclick = 
+        visBrystInfo; 
+        // event listener:
+        function visBrystInfo() {
+        document.getElementById("bryst_info").style.opacity = 1;
+        
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+        // SKULDEREN //
+        // event handler:
+        document.getElementById("cirkel_skulder").onclick = 
+        visSkulderInfo; 
+        // event listener:
+        function visSkulderInfo() {
+        document.getElementById("skulder_info").style.opacity = 1;
+
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+        // HOFTEN //
+        // event handler:
+        document.getElementById("cirkel_hofte").onclick = 
+        visHofteInfo; 
+        
+        // event listener:
+        function visHofteInfo() {
+        document.getElementById("hofte_info").style.opacity = 1;
+
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+        // STRÆKMÆRKER //
+        // event handler:
+        document.getElementById("cirkel_straek").onclick = 
+        visStraekInfo; 
+        // event listener:
+        function visStraekInfo() {
+        document.getElementById("straek_info").style.opacity = 1;
+
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+        // FODEN //
+        // event handler:
+        document.getElementById("cirkel_fod").onclick = 
+        visFodInfo; 
+        // event listener:
+        function visFodInfo() {
+        document.getElementById("fod_info").style.opacity = 1;
+
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+        // KNÆ //
+        // event handler:
+        document.getElementById("cirkel_knae").onclick = 
+        visKnaeInfo; 
+        // event listener:
+        function visKnaeInfo() {
+        document.getElementById("knae_info").style.opacity = 1;
+
+        // Afspil klik lyden
+        klikLyd.play();
+        }
+
+    </script>
+    
+</body>
+</html>

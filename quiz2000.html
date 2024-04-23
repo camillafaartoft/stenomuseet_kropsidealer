@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Quiz 2000</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+    <a class="tilbage_knap" href="fakta1960.html">Tilbage</a>
+
+    <div>
+        <h2 class="overskrift_quiz1900">Hvilket kropsideal skulle Marie efterleve i 2000?</h2>  
+    </div>
+
+    <div class="quiz_img">
+        <div class="quiz_img_række1">
+            <div id="fedt_2000">
+                <img src="img/quizovervaegtig.jpg" alt="">
+                <h3>Fedt på kroppen</h3>
+            </div>
+
+            <div id="timeglas_2000">
+                <img src="img/quiztimeglas.jpg" alt="">
+                <h3>Timeglas-figur</h3>
+            </div>
+        </div>
+
+        <div class="quiz_img_række2">
+            <div id="muskulos_2000">
+                <img src="img/quiztraenet.jpg" alt="">
+                <h3>Muskuløs</h3>
+            </div>
+
+            <div id="slank_2000">
+                <img src="img/quizingenformer.jpg" alt="">
+                <h3>Ingen former</h3>
+            </div>
+        </div>
+    </div>    
+
+    <img class="tidslinje" src="img/tidslinje2000.png" alt="Tidslinje 2000">
+
+    <img id="popup_korrekt2000" src="img/korrektsvar.jpg" alt="rigtigt svar popup">
+
+    <img id="popup_forkert2000" src="img/forkertsvar.jpg" alt="forkert svar popup">
+
+    <audio id="forkertLyd" src="img/forkertLyd.mp3"></audio>
+
+    <audio id="korrektLyd" src="img/korrektLyd.mp3"></audio>
+
+    <script>
+        const korrekt2000 = document.getElementById("popup_korrekt2000");
+        const forkert2000 = document.getElementById("popup_forkert2000");
+
+        const fed2000 = document.getElementById("fedt_2000");
+        const timeglas2000 = document.getElementById("timeglas_2000");
+        const muskulos2000 = document.getElementById("muskulos_2000");
+        const slank2000 = document.getElementById("slank_2000");
+
+        timeglas2000.onclick = visForkertPopup2000;
+        fed2000.onclick = visForkertPopup2000;
+        muskulos2000.onclick = visKorrektPopup2000;
+        slank2000.onclick = visForkertPopup2000;
+
+        function visKorrektPopup2000() {
+            korrekt2000.style.display = "block"; //Viser korrekt popup
+            forkert2000.style.display = "none"; //Skjuler forkert popup
+
+        // Afspil lyden for korrekt svar
+        korrektLyd.play();
+
+        // Efter 2,5 sekundt, skjul korrekt popup og gå til næste side
+            setTimeout(function() {
+                korrekt2000.style.display = "none"; // Skjuler korrekt popup igen
+                window.location.href = "fakta2000.html"; // Springer til nyt html (fakta1900.html), fået fra ChatGPT
+            }, 2500);
+        }
+        // Funktion til at vise den forkerte popup og skjule den igen efter 1,5 sekundt
+        function visForkertPopup2000() {
+            forkert2000.style.display = "block"; // Viser forkert popup
+            korrekt2000.style.display = "none"; // Skjuler korrekt popup
+            
+        // Afspil lyden for forkert svar
+        forkertLyd.play();
+
+         // Efter 1,5 sekundt, skjul forkert popup   
+            setTimeout(function() {
+                forkert2000.style.display = "none";
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>

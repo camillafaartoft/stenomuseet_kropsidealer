@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Afslutning</title>
+</head>
+<body>
+    <div class="kant"></div>
+
+    <a class="tilbage_knap" href="motiongraphic.html">Tilbage</a>
+
+    <img src="img/marieafslutning.png" alt="marie_slut" class="marie_afslutning">
+    <img src="img/tale1.png" alt="talebobel" class="tale1">
+    <img src="img/tale2.png" alt="talebobel" class="tale2">
+
+    <h2 id="overskrift_afslutning">Tak, fordi du var med på rejsen!</h2>
+
+    <script> // Taget fra ChatGPT
+        document.addEventListener("DOMContentLoaded", function() { 
+            // Efter 0,5 sekunder
+            setTimeout(function() {
+                // Gør tale 1 synlig ved at ændre opacity til 1
+                document.querySelector('.tale1').style.opacity = 1; 
+            }, 500);
+
+            // Efter 2,5 sekunder
+            setTimeout(function() {
+                // Gør tale 2 synlig ved at ændre opacity til 1
+                document.querySelector('.tale2').style.opacity = 1; 
+            }, 2500);
+
+            // Efter 15 sekunder
+            setTimeout(function() {
+                // Gør tale 1 usynlig ved at ændre opacity til 0
+                document.querySelector('.tale1').style.opacity = 0; 
+                // Gør tale 2 usynlig ved at ændre opacity til 0
+                document.querySelector('.tale2').style.opacity = 0; 
+            }, 6000);
+
+            // Efter 10 sekunder
+            setTimeout(function() {
+                // Gør afsluttende overskrift synlig ved at ændre opacity til 1
+                document.getElementById('overskrift_afslutning').style.opacity = 1; 
+                }, 7000);
+
+            // Efter 20 sekunder
+            setTimeout(function() {
+                // Skift til index.html
+                window.location.href = "index.html";
+            }, 20000);
+        });
+    </script>
+
+</body>
+
+</html>

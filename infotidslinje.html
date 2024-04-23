@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Tidslinje</title>
+</head>
+<body>
+
+    <div class="kant"></div>
+
+        <div>
+            <h2 class="overskrift_quiz1900">Kropsidealer gennem årene</h2>  
+        </div>
+    
+        <div class="marie_tidslinje_1900">
+            <img class="marie_tidslinje_korset" src="img/marie_korset.png" alt="Marie i korset">
+            <div class="tekst_tidslinje_korset">Timeglas figur <br> Former</div>
+        </div> 
+           
+        <div class="marie_tidslinje_1960" >
+            <img class="marie_tidslinje_tynd" src="img/marie_tynd.png" alt="Marie tynd">
+            <div class="tekst_tidslinje_tynd">Slank <br> Ingen former</div>
+        </div>
+
+        <div class="marie_tidslinje_2000">
+            <img class="marie_tidslinje_tonet" src="img/marie_traenet.png" alt="Marie tonet">
+            <div class="tekst_tidslinje_tonet">Muskuløs <br> Tonet krop</div>
+        </div>
+
+        <img class="tidslinjeAlle" src="img/tidslinjealle.png" alt="Tidslinje 1900">
+
+        <a class="tilbage_tidslinje_knap" href="fakta2000.html">Tilbage</a>
+        <a class="fortsæt_tidslinje_knap" href="infomarie.html">Videre</a> 
+
+        <script>
+            // Fået fra ChatGPT
+            document.addEventListener("DOMContentLoaded", function() { 
+                // Efter 0,4 sekunder
+                setTimeout(function() {
+                 // Gør Marie 1900 synlig ved at ændre opacity til 1
+                    document.querySelector('.marie_tidslinje_1900').style.opacity = 1; 
+                }, 400);
+    
+                // Efter 1 sekund
+                setTimeout(function() {
+                 // Gør Marie 1960 synlig ved at ændre opacity til 1
+                    document.querySelector('.marie_tidslinje_1960').style.opacity = 1; 
+                }, 1000);
+    
+                 // Efter 1,6 sekunder
+                 setTimeout(function() {
+                // Gør Marie 2000 synlig ved at ændre opacity til 1
+                    document.querySelector('.marie_tidslinje_2000').style.opacity = 1; 
+                }, 1600);
+            });
+        </script>
+
+</body>
+</html>
